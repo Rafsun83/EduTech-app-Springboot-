@@ -33,6 +33,10 @@ public class Courses {
     @JoinColumn(name = "FK_Course_Id", referencedColumnName = "id")
     private List<Books> referenceBook;
 
+    @OneToMany(cascade = CascadeType.ALL)
+    @JoinColumn(name = "FK_Course_Id", referencedColumnName = "id")
+    private List<Instructors> instructorList;
+
     // Getters and Setters
     public Long getId() {
         return id;
@@ -92,5 +96,12 @@ public class Courses {
     }
     public void setReferenceBook(List<Books> books){
         this.referenceBook = books;
+    }
+
+    public List<Instructors> getInstructorList(){
+        return instructorList;
+    }
+    public void setInstructorList(List<Instructors> instructors){
+        this.instructorList = instructors;
     }
 }

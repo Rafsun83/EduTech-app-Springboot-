@@ -1,5 +1,7 @@
 package com.rafsunwork.EduTech.dto;
 
+import com.rafsunwork.EduTech.model.Instructors;
+
 import java.util.List;
 
 public class CourseResponseDTO {
@@ -10,6 +12,8 @@ public class CourseResponseDTO {
     private Number price;
     private String hours;
     private List<BookRequestDTO> referenceBook;
+    private List<Instructors> instructorsList;
+
 
     //setter getter
 
@@ -58,5 +62,12 @@ public class CourseResponseDTO {
 
     public void setReferenceBook(List<BookRequestDTO> referenceBook){
         this.referenceBook = referenceBook;
+    }
+
+    public List<Instructors> getInstructorsList(){
+        return instructorsList;
+    }
+    public void setInstructorsList(List<Instructors> instructors){
+        this.instructorsList = instructors;
     }
 }

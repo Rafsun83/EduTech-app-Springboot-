@@ -30,6 +30,12 @@ public class Instructors {
 
 
     //setter getter
+    public  Long getId(){
+        return id;
+    }
+    public void setId(Long id){
+        this.id = id;
+    }
     public String getName(){
         return name;
     }
@@ -55,7 +61,8 @@ public class Instructors {
     public String getPreviousExperience(){
         return previousExperience;
     }
-    public void setPreviousExperience(){
+    public void setPreviousExperience(String previousExperience)
+    {
         this.previousExperience = previousExperience;
     }
 

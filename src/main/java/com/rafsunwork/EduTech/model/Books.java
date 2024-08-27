@@ -30,9 +30,6 @@ public class Books {
     @Column(name="author")
     private List<String> author;
 
-//    @Column(name = "reference_book_id")
-//    private Long ref_book_id;
-
 
 
     //Setter Getter

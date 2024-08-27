@@ -39,9 +39,6 @@ public class CoursesController {
     @GetMapping
     public ResponseEntity<ApiResponse<List<CourseResponseDTO>>> getAllCourse(){
         List<CourseResponseDTO> course = courseServices.getAllCourse().stream().map(courseResponseMapper::toDto).collect(Collectors.toList());
-//        List<Courses> course = courseServices.getAllCourse();
-
-        System.out.println("Course list---"+ course);
 
         HttpHeaders responseHeaders = new HttpHeaders();
         responseHeaders.set("response-message", "Data retrieved successfully");
