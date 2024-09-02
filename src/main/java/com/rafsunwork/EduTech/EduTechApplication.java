@@ -2,6 +2,7 @@ package com.rafsunwork.EduTech;
 
 import com.rafsunwork.EduTech.repository.BooksRepository;
 import com.rafsunwork.EduTech.repository.CoursesRepository;
+import com.rafsunwork.EduTech.repository.FilesRepository;
 import com.rafsunwork.EduTech.repository.InstructorsRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
@@ -20,5 +21,6 @@ public class EduTechApplication {
 	private CoursesRepository coursesRepository;
 	private BooksRepository booksRepository;
 	private InstructorsRepository instructorsRepository;
+	private FilesRepository filesRepository;
 
 }
