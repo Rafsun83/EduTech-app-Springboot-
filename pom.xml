@@ -9,7 +9,7 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.rafsunwork</groupId>
-	<artifactId>EduTech</artifactId>
+	<artifactId>edu-tech</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>EduTech</name>
 	<description>EduTechApplication</description>
