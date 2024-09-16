@@ -1,0 +1,50 @@
+#version: '3.8'
+
+services:
+  # MySQL container
+  db:
+    image: mysql:8.0
+    container_name: mysql-db
+    restart: always
+    environment:
+      MYSQL_DATABASE: EduTech
+      MYSQL_ROOT_PASSWORD: password123A
+      MYSQL_USER: root
+      MYSQL_PASSWORD: password123A
+    ports:
+      - "3306:3306"
+    volumes:
+      - db_data:/var/lib/mysql
+    networks:
+      - edu-tech-network
+
+  # Spring Boot container
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: edu-tech-app
+    depends_on:
+      - db
+    ports:
+      - "8000:8080"
+    environment:
+      SPRING_APPLICATION_NAME: edu-tech
+      SPRING_DATASOURCE_URL: jdbc:mysql://db:3306/EduTech?useSSL=false
+      SPRING_DATASOURCE_USERNAME: root
+      SPRING_DATASOURCE_PASSWORD: password123A
+      SERVER_PORT: 8080
+      SPRING_JPA_HIBERNATE_DDL_AUTO: update
+      SPRING_JPA_SHOW_SQL: "true"
+      SPRING_JPA_PROPERTIES_HIBERNATE_DIALECT: org.hibernate.dialect.MySQLDialect
+      SPRING_SERVLET_MULTIPART_MAX_FILE_SIZE: 1024MB
+      SPRING_SERVLET_MULTIPART_MAX_REQUEST_SIZE: 1024MB
+    networks:
+      - edu-tech-network
+
+networks:
+  edu-tech-network:
+    driver: bridge
+
+volumes:
+  db_data:
